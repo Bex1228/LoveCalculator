@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".ui.fragments.NameFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/iv_love"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animation1"
+        app:lottie_url="REPLACE_JSON_URL" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Love Calculator"
+        android:textColor="@color/purple1"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/iv_love"
+        app:layout_constraintTop_toBottomOf="@+id/iv_love" />
+
+    <TextView
+        android:id="@+id/tv_fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="First Name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_box1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:animationCache="true"
+        app:layout_constraintStart_toStartOf="@+id/tv_fname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_fname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="First name"
+            android:inputType="text"
+            android:lines="1"
+            app:layout_constraintStart_toStartOf="@+id/tv_fname"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fname" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_sname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Second Name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/et_box1"
+        app:layout_constraintTop_toBottomOf="@id/et_box1" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_box2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:animationCache="true"
+        app:layout_constraintStart_toStartOf="@+id/tv_sname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_sname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Second name"
+            android:inputType="text"
+            android:lines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Calculate"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_box2" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculate" />
+
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20sp"
+        android:src="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_home"
+        app:layout_constraintTop_toBottomOf="@id/iv_home" />
+
+    <ImageView
+        android:id="@+id/iv_history"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20sp"
+        android:src="@drawable/baseline_history_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="History"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_history" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
