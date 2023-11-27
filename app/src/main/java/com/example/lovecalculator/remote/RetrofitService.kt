@@ -1,4 +1,4 @@
-package com.example.lovecalculator.ui.model
+package com.example.lovecalculator.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

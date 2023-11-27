@@ -1,25 +1,24 @@
-package com.example.lovecalculator.ui.fragments
+package com.example.lovecalculator.presentation.names
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentNameBinding
-import com.example.lovecalculator.ui.LoveView
-import com.example.lovecalculator.ui.Presenter
-import com.example.lovecalculator.ui.model.LoveModel
+import com.example.lovecalculator.viewmodel.LoveViewModel
 
 
-class NameFragment : Fragment(), LoveView {
+class NameFragment : Fragment() {
 
     private lateinit var binding: FragmentNameBinding
 
-    private val presenter = Presenter(this)
+    private val viewModel: LoveViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,16 +35,13 @@ class NameFragment : Fragment(), LoveView {
 
     private fun initClickers() = with(binding) {
         btnCalculate.setOnClickListener {
-            presenter.getLove(etFname.text.toString(), etSname.text.toString())
+            viewModel.getLiveLoveData(
+                etFname.text.toString(),
+                etSname.text.toString()
+            ).observe(viewLifecycleOwner, Observer {
+                findNavController().navigate(R.id.resultFragment, bundleOf(RESULT_KEY to it))
+            })
         }
-    }
-
-    override fun showResponse(loveModel: LoveModel) {
-        findNavController().navigate(R.id.resultFragment, bundleOf(RESULT_KEY to loveModel))
-    }
-
-    override fun showError(error: String) {
-        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
     }
 
     companion object {

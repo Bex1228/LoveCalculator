@@ -1,13 +1,11 @@
-package com.example.lovecalculator.ui.model
+package com.example.lovecalculator.remote
 
-import com.example.lovecalculator.ui.model.LoveModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface LoveApi {
-    //https://love-calculator.p.rapidapi.com/getPercentage?sname=Alice&fname=John
     @GET("getPercentage")
     fun getLove(
         @Query("sname") secondName: String,

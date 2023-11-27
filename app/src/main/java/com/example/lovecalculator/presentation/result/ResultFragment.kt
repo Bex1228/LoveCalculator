@@ -1,4 +1,4 @@
-package com.example.lovecalculator.ui.fragments
+package com.example.lovecalculator.presentation.result
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.databinding.FragmentResultBinding
-import com.example.lovecalculator.ui.fragments.NameFragment.Companion.RESULT_KEY
-import com.example.lovecalculator.ui.model.LoveModel
+import com.example.lovecalculator.presentation.names.NameFragment.Companion.RESULT_KEY
+import com.example.lovecalculator.remote.LoveModel
 
 class ResultFragment : Fragment() {
 
