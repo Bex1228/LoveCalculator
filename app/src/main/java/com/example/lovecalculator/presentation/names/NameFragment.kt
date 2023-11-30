@@ -11,7 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentNameBinding
+import com.example.lovecalculator.repository.Repository
 import com.example.lovecalculator.viewmodel.LoveViewModel
+import javax.inject.Inject
 
 
 class NameFragment : Fragment() {
