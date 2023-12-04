@@ -19,4 +19,9 @@
         android:id="@+id/onBoardFragment"
         android:name="com.example.lovecalculator.presentation.onboard.OnBoardFragment"
         android:label="OnBoardFragment" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.lovecalculator.presentation.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>

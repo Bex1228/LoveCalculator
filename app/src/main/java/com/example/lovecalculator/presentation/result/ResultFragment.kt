@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentResultBinding
 import com.example.lovecalculator.presentation.names.NameFragment.Companion.RESULT_KEY
 import com.example.lovecalculator.remote.LoveModel
@@ -31,6 +32,9 @@ class ResultFragment : Fragment() {
     private fun initListener() {
         binding.btnTryAgain.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.ivHistory.setOnClickListener {
+            findNavController().navigate(R.id.historyFragment)
         }
     }
 
