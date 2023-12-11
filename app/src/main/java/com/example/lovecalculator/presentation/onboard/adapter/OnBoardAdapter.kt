@@ -16,21 +16,21 @@ class OnBoardAdapter(private val onClick: () -> Unit) :
         OnBoardModel(
             "Have a good time",
             "You should take the time to help those who need you",
-            R.drawable.img_ob2
+            R.raw.anim2
         ),
         OnBoardModel(
             "Cherishing love",
             "It is now no longer possible for you to cherish love",
-            R.drawable.img_ob3
+            R.raw.anim3
         ),
         OnBoardModel(
             "Have a break up?",
             "We have made the correction for you don't worry. Maybe someone is waiting for you",
-            R.drawable.img_ob4
+            R.raw.anim4
         ),
         OnBoardModel(
             "It's Funs and Many more", "",
-            R.drawable.img_ob1
+            R.raw.anim5
         )
     )
 
@@ -55,13 +55,16 @@ class OnBoardAdapter(private val onClick: () -> Unit) :
 
         fun bind(onBoard: OnBoardModel) {
             binding.apply {
-                imgBoard.setImageResource(onBoard.img)
-                tvTitle.text = onBoard.title
-                tvDesc.text = onBoard.desc
-            }
-            binding.btnStart.isVisible = adapterPosition == list.lastIndex
-            binding.btnStart.setOnClickListener {
-                onClick()
+                onBoard.img?.let {
+                    binding.ivBoard.setAnimation(onBoard.img)
+                    binding.ivBoard.playAnimation()
+                    tvTitle.text = onBoard.title
+                    tvDesc.text = onBoard.desc
+                }
+                binding.btnStart.isVisible = adapterPosition == list.lastIndex
+                binding.btnStart.setOnClickListener {
+                    onClick()
+                }
             }
         }
     }
